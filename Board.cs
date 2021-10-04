@@ -31,7 +31,14 @@ namespace Tic_Tac_Toe
         /// </summary>
         public void Update()
         {
-            Console.ReadKey(true);
+            if (Game.GetInput() == 1)
+            {
+                _board[0, 0] = _currentToken;
+            }
+            if (_currentToken == _player1Token)
+                _currentToken = _player2Token;
+            else
+                _currentToken = _player1Token;
         }
 
         /// <summary>
