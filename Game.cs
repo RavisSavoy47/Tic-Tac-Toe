@@ -9,6 +9,9 @@ namespace Tic_Tac_Toe
         private bool _gameOver = false;
         private Board _gameBoard;
 
+        /// <summary>
+        /// Begins the game.
+        /// </summary>
         public void Run()
         {
             Start();
@@ -54,6 +57,16 @@ namespace Tic_Tac_Toe
         private void End()
         {
             _gameBoard.End();
+        }
+
+        public static int GetInput()
+        {
+            int choice = -1;
+            
+            if (!int.TryParse(Console.ReadLine(), out choice))
+                choice = -1;
+
+            return choice;
         }
     }
 }

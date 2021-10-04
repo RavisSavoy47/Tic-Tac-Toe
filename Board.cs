@@ -47,6 +47,9 @@ namespace Tic_Tac_Toe
                               
         }
 
+        /// <summary>
+        /// Called when the game ends
+        /// </summary>
         public void End()
         {
             
