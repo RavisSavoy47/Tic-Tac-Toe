@@ -94,7 +94,6 @@ namespace Tic_Tac_Toe
             //checks the current turn 
             if (_currentTurn == 9)
             {
-                Draw();
                 //If they are on turn 9 and nobody has won then 
                 Console.WriteLine("It's a tie!");
                 Console.ReadKey(true);
@@ -104,7 +103,6 @@ namespace Tic_Tac_Toe
             //checks if anyone has won
             if (CheckWinner(_currentToken))
             {
-                Draw();
                 RestartMenu();
             }
 
@@ -173,6 +171,8 @@ namespace Tic_Tac_Toe
         /// <returns></returns>
         private bool CheckWinner(char token)
         {
+            Console.Clear();
+            Draw();
             if (_board[0, 0] == token && _board[0, 1] == token && _board[0, 2] == token)
             {
                 Console.WriteLine(token + " Wins!!!");
