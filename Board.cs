@@ -31,10 +31,36 @@ namespace Tic_Tac_Toe
         /// </summary>
         public void Update()
         {
-            if (Game.GetInput() == 1)
-            {
+            int choice = Game.GetInput("Pick a space.", "1", "2", "3", "4", "5", "6", "7", "8", "9");
+
+            if (choice == 0)
                 _board[0, 0] = _currentToken;
-            }
+
+            if (choice == 1)
+                _board[0, 1] = _currentToken;
+
+            if (choice == 2)
+                _board[0, 2] = _currentToken;
+
+            if (choice == 3)
+                _board[1, 0] = _currentToken;
+            
+            if (choice == 4)
+                _board[1, 1] = _currentToken;
+            
+            if (choice == 5)
+                _board[1, 2] = _currentToken;
+            
+            if (choice == 6)
+                _board[2, 0] = _currentToken;
+            
+            if (choice == 7)
+                _board[2, 1] = _currentToken;
+            
+            if (choice == 8)
+                _board[2, 2] = _currentToken;
+            
+            //Changes the current player
             if (_currentToken == _player1Token)
                 _currentToken = _player2Token;
             else
@@ -63,7 +89,7 @@ namespace Tic_Tac_Toe
         }
 
         /// <summary>
-        /// Assigns the spot the given index in the board array to be trhe given token.
+        /// Assigns the spot the given index in the board array to be the given token.
         /// </summary>
         /// <param name="token">The token to set the array index to.</param>
         /// <param name="posX">The x position of the token.</param>
