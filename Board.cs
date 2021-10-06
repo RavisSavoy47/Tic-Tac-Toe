@@ -173,42 +173,30 @@ namespace Tic_Tac_Toe
         {
             Console.Clear();
             Draw();
-            if (_board[0, 0] == token && _board[0, 1] == token && _board[0, 2] == token)
+
+            //Checks the Rows
+            for ( int i = 0; i < 3; i++)
             {
-                Console.WriteLine(token + " Wins!!!");
-                Console.ReadKey(true);
-                return true;
+                if (_board[0, i] == token && _board[1, i] == token && _board[2, i] == token)
+                {
+                    Console.WriteLine(token + " Wins!!!");
+                    Console.ReadKey(true);
+                    return true;
+                }
             }
-            if (_board[1, 0] == token && _board[1, 1] == token && _board[1, 2] == token)
+
+            //Checks the Columns
+            for (int i = 0; i < 3; i++)
             {
-                Console.WriteLine(token + " Wins!!!");
-                Console.ReadKey(true);
-                return true;
+                if (_board[i, 0] == token && _board[i, 1] == token && _board[i, 2] == token)
+                {
+                    Console.WriteLine(token + " Wins!!!");
+                    Console.ReadKey(true);
+                    return true;
+                }
             }
-            if (_board[2, 0] == token && _board[2, 1] == token && _board[2, 2] == token)
-            {
-                Console.WriteLine(token + " Wins!!!");
-                Console.ReadKey(true);
-                return true;
-            }
-            if (_board[0, 0] == token && _board[1, 0] == token && _board[2, 0] == token)
-            {
-                Console.WriteLine(token + " Wins!!!");
-                Console.ReadKey(true);
-                return true;
-            }
-            if (_board[0, 1] == token && _board[1, 1] == token && _board[2, 1] == token)
-            {
-                Console.WriteLine(token + " Wins!!!");
-                Console.ReadKey(true);
-                return true;
-            }
-            if (_board[0, 2] == token && _board[1, 2] == token && _board[2, 2] == token)
-            {
-                Console.WriteLine(token + " Wins!!!");
-                Console.ReadKey(true);
-                return true;
-            }
+
+            //Checks the diagonal
             if (_board[0, 0] == token && _board[1, 1] == token && _board[2, 2] == token)
             {
                 Console.WriteLine(token + " Wins!!!");
